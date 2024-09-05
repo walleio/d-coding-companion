@@ -1,4 +1,4 @@
-# d-coding-companion
+# ✅d-coding-companion
 A coding companion that can be used to fix bugs in the terminal.
 
 # instructions:
@@ -9,7 +9,7 @@ A coding companion that can be used to fix bugs in the terminal.
 5. Write some faulty code 'print("Hello"'
 6. Exit file and return to terminal
 7. Allow d to run and change files - 'chmod +x run_file.sh make_change.sh d.sh'
-8. Use d - './d file.py'
+8. Use d - './d file.py' and done! 🔥
 
 Here are some examples of use (Currently works with java, c, shell, python, ruby, and swift):
 
