@@ -12,7 +12,8 @@ A coding companion that can be used to fix bugs in the terminal.
 8. Use d - './d file.py'
 
 Here are some examples of use (Currently works with java, c, shell, python, ruby, and swift):
-https://github.com/user-attachments/assets/779b13a9-f710-4d56-b854-43acba56c10f
+
+https://github.com/user-attachments/assets/086e1fbf-4a43-4feb-bdb7-89c794204d63
 
 https://github.com/user-attachments/assets/1054aaa8-9b95-4dd4-85c4-cee20179ac68
 
