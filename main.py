@@ -4,7 +4,7 @@ from openai import OpenAI
 import ast
 from datetime import datetime
 
-client = OpenAI(api_key='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')
+client=OpenAI()
 
 file = sys.argv[1]
 file_code_original = sys.argv[2].replace("\\", "\\\\")
