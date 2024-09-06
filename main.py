@@ -5,6 +5,7 @@ import ast
 from datetime import datetime
 
 client = OpenAI(api_key='INSERT OPENAI API KEY HERE')
+make_changes = False
 
 file = sys.argv[1]
 file_code_original = sys.argv[2].replace("\\", "\\\\")
@@ -71,16 +72,23 @@ else:
         else: 
             output = 'not fixed'
     if output == 'not fixed':
-        print('Your code was not fixed. The original file has not been changed. Try again.')
+        print('❌ Could not identify and fix issues. The original file has not been changed. Try again.')
         with open(f'{file}', 'w') as writer:
             writer.write(file_code_original)
     else:
-        print("✅ Your code was fixed. Your original file has been moved to changed-files.")
+        if make_changes:
+            print("✅ The errors in your code were fixed. Your original file has been moved to changed-files.")
+        else:
+            print("✅ The errors in your code were identified. Your original file has not been changed.")
         current_time = datetime.now().strftime('%m.%d.%H.%M.%S')
-        with open(f'changed-files/{current_time}', 'w') as writer:
-            writer.write(file_code_original)
-        with open(file, 'w') as writer:
-            writer.write(file_code_new)
+        if make_changes:
+            with open(f'changed-files/{current_time}', 'w') as writer:
+                writer.write(file_code_original)
+            with open(file, 'w') as writer:
+                writer.write(file_code_new)
+        else:
+            with open(file, 'w') as writer:
+                writer.write(file_code_original)
         if isinstance(output, list):
             for n, each in enumerate(output):
                 print(f"### FIX {n} ###\nLine number: {each['line']}\nDescription: {each['description']}")
